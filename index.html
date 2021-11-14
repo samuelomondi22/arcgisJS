@@ -1,0 +1,41 @@
+<!-- map(all your data is) is like a backyard and a mapview is like a window. (hw map is rendered) -->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <title>Dot density | Sample | ArcGIS API for JavaScript 4.21</title>
+    <!-- get arcgis for javascript into your app -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/dark/main.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://js.arcgis.com/4.21/"></script>
+    <script>
+      var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+      window.dojoConfig = {
+        packages: [
+          {
+            name: "js",
+            location: locationPath + "/js"
+          }
+        ]
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="controlDiv" class="esri-widget">
+      <div id="legendDiv"></div>
+      <div id="buttonDiv">
+        <div id="instructions">Hover over category to emphasize it. Click category to freeze selection.</div>
+        <button id="reset-button" class="esri-widget">Reset</button>
+      </div>
+    </div>
+    <div id="sliderDiv" class="esri-widget">
+      Dot Value: <span id="dotValueDisplay">100</span>
+      <input type="range" class="esri-widget" id="dotValueInput" min="1" max="200" step="1" value="50">
+    </div>
+  </body>
+  <script src="./js/main.js"></script>
+</html>
